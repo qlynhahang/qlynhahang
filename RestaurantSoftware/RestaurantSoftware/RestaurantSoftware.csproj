@@ -63,10 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL_Layer\Mon_BLL.cs" />
-    <Compile Include="DA_Layer\RestauranDB.designer.cs">
+    <Compile Include="DA_Layer\RestaurantDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RestauranDB.dbml</DependentUpon>
+      <DependentUpon>RestaurantDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -193,8 +193,8 @@
     <Compile Include="Untils\Notifications.cs" />
     <Compile Include="Untils\Utils.cs" />
     <None Include="app.config" />
-    <None Include="DA_Layer\RestauranDB.dbml.layout">
-      <DependentUpon>RestauranDB.dbml</DependentUpon>
+    <None Include="DA_Layer\RestaurantDB.dbml.layout">
+      <DependentUpon>RestaurantDB.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -266,9 +266,9 @@
     <EmbeddedResource Include="P_Layer\Frm_ThanhToan.resx">
       <DependentUpon>Frm_ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DA_Layer\RestauranDB.dbml">
+    <None Include="DA_Layer\RestaurantDB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>RestauranDB.designer.cs</LastGenOutput>
+      <LastGenOutput>RestaurantDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">

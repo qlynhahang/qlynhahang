@@ -49,6 +49,7 @@
             this.col_TenMon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_TenVietTat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_Gia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_TrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -203,7 +204,8 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.col_TenMon,
             this.col_TenVietTat,
-            this.col_Gia});
+            this.col_Gia,
+            this.col_TrangThai});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
@@ -231,6 +233,14 @@
             this.col_Gia.Name = "col_Gia";
             this.col_Gia.Visible = true;
             this.col_Gia.VisibleIndex = 2;
+            // 
+            // col_TrangThai
+            // 
+            this.col_TrangThai.Caption = "Trạng Thái";
+            this.col_TrangThai.FieldName = "trangthai";
+            this.col_TrangThai.Name = "col_TrangThai";
+            this.col_TrangThai.Visible = true;
+            this.col_TrangThai.VisibleIndex = 3;
             // 
             // Frm_Mon
             // 
@@ -274,5 +284,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn col_TenMon;
         private DevExpress.XtraGrid.Columns.GridColumn col_TenVietTat;
         private DevExpress.XtraGrid.Columns.GridColumn col_Gia;
+        private DevExpress.XtraGrid.Columns.GridColumn col_TrangThai;
     }
 }

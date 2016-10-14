@@ -6,7 +6,7 @@ namespace RestaurantSoftware.BL_Layer
 {
     public class Mon_BLL
     {
-        RestauranDBDataContext dbContext = new RestauranDBDataContext();
+        RestaurantDBDataContext dbContext = new RestaurantDBDataContext();
 
         public IEnumerable<ThucDon> LayDanhSachMon()
         {
