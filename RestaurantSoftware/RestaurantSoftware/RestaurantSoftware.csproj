@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL_Layer\Mon_BLL.cs" />
+    <Compile Include="BL_Layer\QuyDinh_BLL.cs" />
     <Compile Include="DA_Layer\RestaurantDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
