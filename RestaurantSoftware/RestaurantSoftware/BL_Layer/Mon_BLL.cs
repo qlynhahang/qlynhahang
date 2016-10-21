@@ -14,11 +14,31 @@ namespace RestaurantSoftware.BL_Layer
             return query;
         }
 
-        public void ThemMonMoi(ThucDon _mon)
+        public void ThemMonMoi(ThucDon mon)
         {
-            dbContext.ThucDons.InsertOnSubmit(_mon);
+
+            dbContext.ThucDons.InsertOnSubmit(mon);
             dbContext.SubmitChanges();
         }
 
-       }
+        public void CapNhatMon(ThucDon m)
+        {
+            ThucDon _mon = dbContext.ThucDons.Single<ThucDon>(x => x.id_mon == m.id_mon);
+            _mon.tenmon = m.tenmon;
+            _mon.LoaiMon= dbContext.LoaiMons.Single<LoaiMon>(l => l.id_loaimon == m.id_loaimon);
+            _mon.gia = m.gia;
+            _mon.tenviettat = m.tenviettat;
+            _mon.trangthai = m.trangthai;
+            // update 
+            dbContext.SubmitChanges();
+        }
+        public bool KiemTraMonTonTai(string _MaMon, string _TenMon)
+        {
+            IEnumerable<ThucDon> query = from m in dbContext.ThucDons
+                                         where m.tenmon == _TenMon || m.id_loaimon == _MaMon
+                                         select m;
+
+            return true;
+        }
+    }
 }

@@ -57,6 +57,8 @@
             this.btn_NhaCungCap = new DevExpress.XtraBars.BarButtonItem();
             this.btn_PhieuNhapHang = new DevExpress.XtraBars.BarButtonItem();
             this.btn_LoaiQuyDinh = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_SuCo = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_LoaiSuCo = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -67,6 +69,7 @@
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -82,9 +85,6 @@
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btn_SuCo = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_LoaiSuCo = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
@@ -346,6 +346,26 @@
             this.btn_LoaiQuyDinh.Name = "btn_LoaiQuyDinh";
             this.btn_LoaiQuyDinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_LoaiQuyDinh_ItemClick);
             // 
+            // btn_SuCo
+            // 
+            this.btn_SuCo.Caption = "Xử lý sự cố";
+            this.btn_SuCo.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_SuCo.Glyph")));
+            this.btn_SuCo.Id = 32;
+            this.btn_SuCo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_SuCo.LargeGlyph")));
+            this.btn_SuCo.LargeWidth = 80;
+            this.btn_SuCo.Name = "btn_SuCo";
+            this.btn_SuCo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_SuCo_ItemClick);
+            // 
+            // btn_LoaiSuCo
+            // 
+            this.btn_LoaiSuCo.Caption = "Loại sự cố";
+            this.btn_LoaiSuCo.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_LoaiSuCo.Glyph")));
+            this.btn_LoaiSuCo.Id = 33;
+            this.btn_LoaiSuCo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_LoaiSuCo.LargeGlyph")));
+            this.btn_LoaiSuCo.LargeWidth = 80;
+            this.btn_LoaiSuCo.Name = "btn_LoaiSuCo";
+            this.btn_LoaiSuCo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_LoaiSuCo_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -419,9 +439,14 @@
             // ribbonPageGroup12
             // 
             this.ribbonPageGroup12.ItemLinks.Add(this.btn_QuyDinh);
-            this.ribbonPageGroup12.ItemLinks.Add(this.btn_LoaiQuyDinh);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Quy định";
+            // 
+            // ribbonPageGroup14
+            // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.btn_SuCo);
+            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            this.ribbonPageGroup14.Text = "Sự cố";
             // 
             // ribbonPage3
             // 
@@ -536,33 +561,6 @@
             this.navBarGroup1.Caption = "Chức năng thường dùng";
             this.navBarGroup1.Name = "navBarGroup1";
             this.navBarGroup1.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup1.SmallImage")));
-            // 
-            // ribbonPageGroup14
-            // 
-            this.ribbonPageGroup14.ItemLinks.Add(this.btn_SuCo);
-            this.ribbonPageGroup14.ItemLinks.Add(this.btn_LoaiSuCo);
-            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
-            this.ribbonPageGroup14.Text = "Sự cố";
-            // 
-            // btn_SuCo
-            // 
-            this.btn_SuCo.Caption = "Xử lý sự cố";
-            this.btn_SuCo.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_SuCo.Glyph")));
-            this.btn_SuCo.Id = 32;
-            this.btn_SuCo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_SuCo.LargeGlyph")));
-            this.btn_SuCo.LargeWidth = 80;
-            this.btn_SuCo.Name = "btn_SuCo";
-            this.btn_SuCo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_SuCo_ItemClick);
-            // 
-            // btn_LoaiSuCo
-            // 
-            this.btn_LoaiSuCo.Caption = "Loại sự cố";
-            this.btn_LoaiSuCo.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_LoaiSuCo.Glyph")));
-            this.btn_LoaiSuCo.Id = 33;
-            this.btn_LoaiSuCo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_LoaiSuCo.LargeGlyph")));
-            this.btn_LoaiSuCo.LargeWidth = 80;
-            this.btn_LoaiSuCo.Name = "btn_LoaiSuCo";
-            this.btn_LoaiSuCo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_LoaiSuCo_ItemClick);
             // 
             // FormMain
             // 

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace RestaurantSoftware.Untils
+namespace RestaurantSoftware.Utils
 {
     class Notifications
     {

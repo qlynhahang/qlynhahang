@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantSoftware.Untils
+namespace RestaurantSoftware.Utils
 {
      public static class Utils
     {

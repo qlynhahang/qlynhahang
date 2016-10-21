@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Mon));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Them = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Xoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Luu = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_LamMoi = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_In = new DevExpress.XtraBars.BarButtonItem();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
@@ -46,14 +46,24 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.col_Id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_LoaiMon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.loaiMonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.col_TenMon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_TenVietTat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_Gia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_TrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.trangThaiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiMonBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trangThaiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -66,11 +76,11 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
-            this.barButtonItem5,
+            this.btn_Them,
+            this.btn_Xoa,
+            this.btn_Luu,
+            this.btn_LamMoi,
+            this.btn_In,
             this.barEditItem1,
             this.barButtonItem6});
             this.barManager1.MainMenu = this.bar2;
@@ -85,56 +95,59 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem3, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem4, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem5, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Them, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Xoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Luu, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_LamMoi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_In, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.barEditItem1, "", false, true, true, 173),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem6, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
             // 
-            // barButtonItem1
+            // btn_Them
             // 
-            this.barButtonItem1.Caption = "Thêm";
-            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btn_Them.Caption = "Thêm";
+            this.btn_Them.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_Them.Glyph")));
+            this.btn_Them.Id = 0;
+            this.btn_Them.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_Them.LargeGlyph")));
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Them_ItemClick);
             // 
-            // barButtonItem2
+            // btn_Xoa
             // 
-            this.barButtonItem2.Caption = "Xóa";
-            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btn_Xoa.Caption = "Xóa";
+            this.btn_Xoa.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.Glyph")));
+            this.btn_Xoa.Id = 1;
+            this.btn_Xoa.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.LargeGlyph")));
+            this.btn_Xoa.Name = "btn_Xoa";
             // 
-            // barButtonItem3
+            // btn_Luu
             // 
-            this.barButtonItem3.Caption = "Lưu";
-            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
-            this.barButtonItem3.Id = 2;
-            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btn_Luu.Caption = "Lưu";
+            this.btn_Luu.Enabled = false;
+            this.btn_Luu.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_Luu.Glyph")));
+            this.btn_Luu.Id = 2;
+            this.btn_Luu.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_Luu.LargeGlyph")));
+            this.btn_Luu.Name = "btn_Luu";
+            this.btn_Luu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Luu_ItemClick);
             // 
-            // barButtonItem4
+            // btn_LamMoi
             // 
-            this.barButtonItem4.Caption = "Làm mới";
-            this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
-            this.barButtonItem4.Id = 3;
-            this.barButtonItem4.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.LargeGlyph")));
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.btn_LamMoi.Caption = "Làm mới";
+            this.btn_LamMoi.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.Glyph")));
+            this.btn_LamMoi.Id = 3;
+            this.btn_LamMoi.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.LargeGlyph")));
+            this.btn_LamMoi.Name = "btn_LamMoi";
             // 
-            // barButtonItem5
+            // btn_In
             // 
-            this.barButtonItem5.Caption = "In";
-            this.barButtonItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.Glyph")));
-            this.barButtonItem5.Id = 4;
-            this.barButtonItem5.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.LargeGlyph")));
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.btn_In.Caption = "In";
+            this.btn_In.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_In.Glyph")));
+            this.btn_In.Id = 4;
+            this.btn_In.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_In.LargeGlyph")));
+            this.btn_In.Name = "btn_In";
             // 
             // barEditItem1
             // 
@@ -194,53 +207,128 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemLookUpEdit1,
+            this.repositoryItemLookUpEdit2});
             this.gridControl1.Size = new System.Drawing.Size(734, 237);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.ProcessGridKey += new System.Windows.Forms.KeyEventHandler(this.gridControl1_ProcessGridKey);
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.col_Id,
+            this.col_LoaiMon,
             this.col_TenMon,
             this.col_TenVietTat,
             this.col_Gia,
             this.col_TrangThai});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.gridView1.NewItemRowText = "Thêm dòng mới tại đây...";
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsNavigation.AutoMoveRowFocus = false;
+            this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
+            this.gridView1.OptionsPrint.ExpandAllDetails = true;
+            this.gridView1.OptionsView.ShowGroupExpandCollapseButtons = false;
+            this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
+            // 
+            // col_Id
+            // 
+            this.col_Id.AppearanceCell.Options.UseTextOptions = true;
+            this.col_Id.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_Id.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_Id.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_Id.Caption = "Mã Món";
+            this.col_Id.FieldName = "id_mon";
+            this.col_Id.Name = "col_Id";
+            this.col_Id.Visible = true;
+            this.col_Id.VisibleIndex = 0;
+            // 
+            // col_LoaiMon
+            // 
+            this.col_LoaiMon.AppearanceCell.Options.UseTextOptions = true;
+            this.col_LoaiMon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_LoaiMon.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_LoaiMon.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_LoaiMon.Caption = "Loại Món";
+            this.col_LoaiMon.ColumnEdit = this.repositoryItemLookUpEdit1;
+            this.col_LoaiMon.FieldName = "id_loaimon";
+            this.col_LoaiMon.Name = "col_LoaiMon";
+            this.col_LoaiMon.Visible = true;
+            this.col_LoaiMon.VisibleIndex = 2;
+            // 
+            // repositoryItemLookUpEdit1
+            // 
+            this.repositoryItemLookUpEdit1.AutoHeight = false;
+            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit1.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tenloaimon", "", 62, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEdit1.DataSource = this.loaiMonBindingSource;
+            this.repositoryItemLookUpEdit1.DisplayMember = "tenloaimon";
+            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
+            this.repositoryItemLookUpEdit1.NullText = "Xin chọn loại món...";
+            this.repositoryItemLookUpEdit1.ValueMember = "id_loaimon";
             // 
             // col_TenMon
             // 
+            this.col_TenMon.AppearanceCell.Options.UseTextOptions = true;
+            this.col_TenMon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_TenMon.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_TenMon.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_TenMon.Caption = "Tên Món";
             this.col_TenMon.FieldName = "tenmon";
             this.col_TenMon.Name = "col_TenMon";
             this.col_TenMon.Visible = true;
-            this.col_TenMon.VisibleIndex = 0;
+            this.col_TenMon.VisibleIndex = 1;
             // 
             // col_TenVietTat
             // 
+            this.col_TenVietTat.AppearanceCell.Options.UseTextOptions = true;
+            this.col_TenVietTat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_TenVietTat.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_TenVietTat.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_TenVietTat.Caption = "Tên Viết Tắt";
             this.col_TenVietTat.FieldName = "tenviettat";
             this.col_TenVietTat.Name = "col_TenVietTat";
             this.col_TenVietTat.Visible = true;
-            this.col_TenVietTat.VisibleIndex = 1;
+            this.col_TenVietTat.VisibleIndex = 3;
             // 
             // col_Gia
             // 
+            this.col_Gia.AppearanceCell.Options.UseTextOptions = true;
+            this.col_Gia.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_Gia.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_Gia.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_Gia.Caption = "Giá";
             this.col_Gia.FieldName = "gia";
             this.col_Gia.Name = "col_Gia";
             this.col_Gia.Visible = true;
-            this.col_Gia.VisibleIndex = 2;
+            this.col_Gia.VisibleIndex = 4;
             // 
             // col_TrangThai
             // 
+            this.col_TrangThai.AppearanceCell.Options.UseTextOptions = true;
+            this.col_TrangThai.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_TrangThai.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_TrangThai.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_TrangThai.Caption = "Trạng Thái";
+            this.col_TrangThai.ColumnEdit = this.repositoryItemLookUpEdit2;
             this.col_TrangThai.FieldName = "trangthai";
             this.col_TrangThai.Name = "col_TrangThai";
             this.col_TrangThai.Visible = true;
-            this.col_TrangThai.VisibleIndex = 3;
+            this.col_TrangThai.VisibleIndex = 5;
+            // 
+            // repositoryItemLookUpEdit2
+            // 
+            this.repositoryItemLookUpEdit2.AutoHeight = false;
+            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit2.DataSource = this.trangThaiBindingSource;
+            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
             // 
             // Frm_Mon
             // 
@@ -254,10 +342,15 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Mon";
             this.Text = "THỰC ĐƠN";
+            this.Load += new System.EventHandler(this.Frm_Mon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiMonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trangThaiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,11 +366,11 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem btn_Them;
+        private DevExpress.XtraBars.BarButtonItem btn_Xoa;
+        private DevExpress.XtraBars.BarButtonItem btn_Luu;
+        private DevExpress.XtraBars.BarButtonItem btn_LamMoi;
+        private DevExpress.XtraBars.BarButtonItem btn_In;
         private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
@@ -285,5 +378,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn col_TenVietTat;
         private DevExpress.XtraGrid.Columns.GridColumn col_Gia;
         private DevExpress.XtraGrid.Columns.GridColumn col_TrangThai;
+        private DevExpress.XtraGrid.Columns.GridColumn col_Id;
+        private DevExpress.XtraGrid.Columns.GridColumn col_LoaiMon;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
+        private System.Windows.Forms.BindingSource loaiMonBindingSource;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
+        private System.Windows.Forms.BindingSource trangThaiBindingSource;
     }
 }

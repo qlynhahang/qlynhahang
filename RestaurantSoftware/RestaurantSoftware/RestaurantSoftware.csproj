@@ -62,7 +62,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL_Layer\DatBan_BLL.cs" />
+    <Compile Include="BL_Layer\HangHoa_BLL.cs" />
+    <Compile Include="BL_Layer\HoaDon_BLL.cs" />
+    <Compile Include="BL_Layer\KhachHang_BLL.cs" />
+    <Compile Include="BL_Layer\LoaiBan_BLL.cs" />
+    <Compile Include="BL_Layer\LoaiMon_BLL.cs" />
     <Compile Include="BL_Layer\Mon_BLL.cs" />
+    <Compile Include="BL_Layer\NhaCungCap_BLL.cs" />
+    <Compile Include="BL_Layer\NhanVien_BLL.cs" />
+    <Compile Include="BL_Layer\NhapHang_BLL.cs" />
+    <Compile Include="BL_Layer\PhucVu_BLL.cs" />
+    <Compile Include="BL_Layer\QuyDinh_BLL.cs" />
+    <Compile Include="BL_Layer\SuCo_BLL.cs" />
+    <Compile Include="BL_Layer\ThamSo_BLL.cs" />
+    <Compile Include="BL_Layer\ThanhToan_BLL.cs" />
+    <Compile Include="BL_Layer\TrangThai_BLL.cs" />
     <Compile Include="DA_Layer\RestaurantDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -190,8 +205,8 @@
     <Compile Include="P_Layer\Frm_ThanhToan.Designer.cs">
       <DependentUpon>Frm_ThanhToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Untils\Notifications.cs" />
-    <Compile Include="Untils\Utils.cs" />
+    <Compile Include="Utils\Notifications.cs" />
+    <Compile Include="Utils\Utils.cs" />
     <None Include="app.config" />
     <None Include="DA_Layer\RestaurantDB.dbml.layout">
       <DependentUpon>RestaurantDB.dbml</DependentUpon>
