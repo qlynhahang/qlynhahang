@@ -8,22 +8,22 @@ namespace RestaurantSoftware.BL_Layer
     {
         RestaurantDBDataContext dbContext = new RestaurantDBDataContext();
 
-        public IEnumerable<ThucDon> LayDanhSachMon()
+        public IEnumerable<Mon> LayDanhSachMon()
         {
-            IEnumerable<ThucDon> query = from m in dbContext.ThucDons select m;
+            IEnumerable<Mon> query = from m in dbContext.Mons select m;
             return query;
         }
 
-        public void ThemMonMoi(ThucDon mon)
+        public void ThemMonMoi(Mon mon)
         {
 
-            dbContext.ThucDons.InsertOnSubmit(mon);
+            dbContext.Mons.InsertOnSubmit(mon);
             dbContext.SubmitChanges();
         }
 
-        public void CapNhatMon(ThucDon m)
+        public void CapNhatMon(Mon m)
         {
-            ThucDon _mon = dbContext.ThucDons.Single<ThucDon>(x => x.id_mon == m.id_mon);
+            Mon _mon = dbContext.Mons.Single<Mon>(x => x.id_mon == m.id_mon);
             _mon.tenmon = m.tenmon;
             _mon.LoaiMon= dbContext.LoaiMons.Single<LoaiMon>(l => l.id_loaimon == m.id_loaimon);
             _mon.gia = m.gia;
@@ -32,9 +32,9 @@ namespace RestaurantSoftware.BL_Layer
             // update 
             dbContext.SubmitChanges();
         }
-        public bool KiemTraMonTonTai(string _MaMon, string _TenMon)
+        public bool KiemTraMonTonTai(int _MaMon, string _TenMon)
         {
-            IEnumerable<ThucDon> query = from m in dbContext.ThucDons
+            IEnumerable<Mon> query = from m in dbContext.Mons
                                          where m.tenmon == _TenMon || m.id_loaimon == _MaMon
                                          select m;
 

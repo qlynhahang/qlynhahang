@@ -50,9 +50,9 @@ namespace RestaurantSoftware.P_Layer
         {
             foreach (int id in _listUpdate)
             {
-                ThucDon Mon = new ThucDon();
-                Mon.id_mon = gridView1.GetRowCellValue(id, "id_mon").ToString();
-                Mon.id_loaimon = gridView1.GetRowCellValue(id, "id_loaimon").ToString();
+                Mon Mon = new Mon();
+                Mon.id_mon = int.Parse(gridView1.GetRowCellValue(id, "id_mon").ToString());
+                Mon.id_loaimon = int.Parse(gridView1.GetRowCellValue(id, "id_loaimon").ToString());
                 Mon.tenmon = gridView1.GetRowCellValue(id, "tenmon").ToString();
                 Mon.tenviettat = gridView1.GetRowCellValue(id, "tenviettat").ToString();
                 Mon.gia =decimal.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
