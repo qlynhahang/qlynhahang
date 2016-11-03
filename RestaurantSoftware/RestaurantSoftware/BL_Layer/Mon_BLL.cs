@@ -40,5 +40,13 @@ namespace RestaurantSoftware.BL_Layer
 
             return true;
         }
+
+        public void XoaMon(int _MonID)
+        {
+            Mon _Mon = dbContext.Mons.Single<Mon>(x => x.id_mon == _MonID);
+            dbContext.Mons.DeleteOnSubmit(_Mon);
+
+            dbContext.SubmitChanges();
+        }
     }
 }
