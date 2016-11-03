@@ -34,6 +34,7 @@ namespace RestaurantSoftware.P_Layer
         }
         private void LoadDataSource()
         {
+            dt = RestaurantSoftware.Utils.Utils.ConvertToDataTable<Mon>(_monBll.LayDanhSachMon());
             gridControl1.DataSource = dt;
 
         }
@@ -77,6 +78,8 @@ namespace RestaurantSoftware.P_Layer
             btn_Luu.Enabled = true;
             _listUpdate.Add(e.RowHandle);
         }
+
+      
 
     }
 }

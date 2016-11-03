@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL_Layer\DanhSachPhieuNhap_BLL.cs" />
     <Compile Include="BL_Layer\DatBan_BLL.cs" />
     <Compile Include="BL_Layer\HangHoa_BLL.cs" />
     <Compile Include="BL_Layer\HoaDon_BLL.cs" />
