@@ -34,6 +34,7 @@ namespace RestaurantSoftware.P_Layer
         }
         private void LoadDataSource()
         {
+            dt = Utils.Utils.ConvertToDataTable<Mon>(_monBll.LayDanhSachMon());
             gridControl1.DataSource = dt;
 
         }
