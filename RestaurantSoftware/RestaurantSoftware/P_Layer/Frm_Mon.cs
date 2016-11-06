@@ -39,11 +39,15 @@ namespace RestaurantSoftware.P_Layer
         private void LoadDataSource()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             dt = RestaurantSoftware.Utils.Utils.ConvertToDataTable<Mon>(_monBll.LayDanhSachMon());
 =======
 
             dt = Utils.Utils.ConvertToDataTable<Mon>(_monBll.LayDanhSachMon());
 >>>>>>> khai
+=======
+            dt = Utils.Utils.ConvertToDataTable<Mon>(_monBll.LayDanhSachMon());
+>>>>>>> vinhuit
             gridControl1.DataSource = dt;
 
         }
