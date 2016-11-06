@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_DatBan));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lvDsBan = new System.Windows.Forms.ListView();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
@@ -63,6 +63,7 @@
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.txtMaDatBan = new DevExpress.XtraEditors.TextEdit();
             this.txtBan = new DevExpress.XtraEditors.TextEdit();
+            this.cbxKhachHang = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -84,7 +85,6 @@
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.cbxKhachHang = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_DsDatBan)).BeginInit();
@@ -100,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDatBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxKhachHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
@@ -120,7 +121,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxKhachHang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -315,7 +315,7 @@
             // 
             this.btn_ThemMon.AutoHeight = false;
             this.btn_ThemMon.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btn_ThemMon.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btn_ThemMon.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, true)});
             this.btn_ThemMon.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btn_ThemMon.Name = "btn_ThemMon";
             this.btn_ThemMon.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
@@ -376,6 +376,7 @@
             // 
             this.gridView_ChiTietDatBan.GridControl = this.gridControl_ChiTietDatBan;
             this.gridView_ChiTietDatBan.Name = "gridView_ChiTietDatBan";
+            this.gridView_ChiTietDatBan.OptionsView.ShowGroupPanel = false;
             // 
             // txtSDT
             // 
@@ -424,6 +425,20 @@
             this.txtBan.Size = new System.Drawing.Size(122, 20);
             this.txtBan.StyleController = this.layoutControl1;
             this.txtBan.TabIndex = 7;
+            // 
+            // cbxKhachHang
+            // 
+            this.cbxKhachHang.Location = new System.Drawing.Point(495, 42);
+            this.cbxKhachHang.Name = "cbxKhachHang";
+            this.cbxKhachHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxKhachHang.Properties.NullText = "";
+            this.cbxKhachHang.Properties.PopupSizeable = false;
+            this.cbxKhachHang.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cbxKhachHang.Size = new System.Drawing.Size(122, 20);
+            this.cbxKhachHang.StyleController = this.layoutControl1;
+            this.cbxKhachHang.TabIndex = 5;
+            this.cbxKhachHang.EditValueChanged += new System.EventHandler(this.cbxKhachHang_EditValueChanged);
             // 
             // layoutControlGroup1
             // 
@@ -628,20 +643,6 @@
             this.imageList1.Images.SetKeyName(1, "table-vang.png");
             this.imageList1.Images.SetKeyName(2, "table-xanh.png");
             // 
-            // cbxKhachHang
-            // 
-            this.cbxKhachHang.Location = new System.Drawing.Point(495, 42);
-            this.cbxKhachHang.Name = "cbxKhachHang";
-            this.cbxKhachHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxKhachHang.Properties.NullText = "";
-            this.cbxKhachHang.Properties.PopupSizeable = false;
-            this.cbxKhachHang.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.cbxKhachHang.Size = new System.Drawing.Size(122, 20);
-            this.cbxKhachHang.StyleController = this.layoutControl1;
-            this.cbxKhachHang.TabIndex = 5;
-            this.cbxKhachHang.EditValueChanged += new System.EventHandler(this.cbxKhachHang_EditValueChanged);
-            // 
             // Frm_DatBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -665,6 +666,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDatBan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxKhachHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
@@ -685,7 +687,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxKhachHang.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -38,16 +38,7 @@ namespace RestaurantSoftware.P_Layer
         }
         private void LoadDataSource()
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
             dt = RestaurantSoftware.Utils.Utils.ConvertToDataTable<Mon>(_monBll.LayDanhSachMon());
-=======
-
-            dt = Utils.Utils.ConvertToDataTable<Mon>(_monBll.LayDanhSachMon());
->>>>>>> khai
-=======
-            dt = Utils.Utils.ConvertToDataTable<Mon>(_monBll.LayDanhSachMon());
->>>>>>> vinhuit
             gridControl1.DataSource = dt;
 
         }
@@ -94,9 +85,6 @@ namespace RestaurantSoftware.P_Layer
             _listUpdate.Add(e.RowHandle);
         }
 
-<<<<<<< HEAD
-      
-=======
         private void btn_Xoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if(Notifications.Answers("Bạn thật sự muốn xóa dữ liệu?") == DialogResult.Cancel)
@@ -141,7 +129,6 @@ namespace RestaurantSoftware.P_Layer
                     gridControl1.ExportToRtf(saveFileDialog1.FileName);
             }
         }
->>>>>>> khai
 
     }
 }

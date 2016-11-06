@@ -62,11 +62,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="BL_Layer\DanhSachPhieuNhap_BLL.cs" />
-=======
     <Compile Include="BL_Layer\Ban_BLL.cs" />
->>>>>>> vinhuit
     <Compile Include="BL_Layer\DatBan_BLL.cs" />
     <Compile Include="BL_Layer\HangHoa_BLL.cs" />
     <Compile Include="BL_Layer\HoaDon.cs" />
@@ -303,13 +300,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Content Include="Resource\table-do.png" />
     <Content Include="Resource\table-vang.png" />
     <Content Include="Resource\table-xanh.png" />
-=======
-    <WCFMetadata Include="Service References\" />
->>>>>>> khai
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
