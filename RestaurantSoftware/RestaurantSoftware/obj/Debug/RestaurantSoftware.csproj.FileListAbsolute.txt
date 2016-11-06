@@ -169,3 +169,6 @@ C:\Users\DUY THANH\Desktop\Resautants\Restaurants\qlynhahang\RestaurantSoftware\
 C:\Users\DUY THANH\Desktop\Resautants\Restaurants\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_ThanhToan.resources
 C:\Users\DUY THANH\Desktop\Resautants\Restaurants\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csproj.GenerateResource.Cache
 C:\Users\DUY THANH\Desktop\Resautants\Restaurants\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe.licenses
+C:\Users\DUC\Desktop\qlynhahang\qlynhahang\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.exe.config
+C:\Users\DUC\Desktop\qlynhahang\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe
+C:\Users\DUC\Desktop\qlynhahang\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.pdb
