@@ -17,5 +17,10 @@ namespace RestaurantSoftware.P_Layer
         {
             InitializeComponent();
         }
+
+        private void Frm_LoaiMon_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

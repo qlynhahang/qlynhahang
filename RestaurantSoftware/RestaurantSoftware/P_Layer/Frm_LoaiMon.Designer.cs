@@ -211,6 +211,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_LoaiMon";
             this.Text = "QUẢN LÝ LOẠI MÓN";
+            this.Load += new System.EventHandler(this.Frm_LoaiMon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

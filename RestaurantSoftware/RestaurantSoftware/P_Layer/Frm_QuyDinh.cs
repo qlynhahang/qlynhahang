@@ -27,8 +27,7 @@ namespace RestaurantSoftware.P_Layer
         }
         private void LoadDataSource()
         {
-            dt = Utils.Utils.ConvertToDataTable<QuyDinh>(_quydinhBLL.LayDanhSachQuyDinh());
-            gridControl1.DataSource = dt;
+            _quydinhBLL.LayDanhSachQuyDinh(grd_QuyDinh);
 
         }
 

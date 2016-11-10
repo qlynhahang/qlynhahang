@@ -31,8 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_QuyDinh));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.richEditControl1 = new DevExpress.XtraRichEdit.RichEditControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.grd_QuyDinh = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.col_MaQuyDinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_TenQuyDinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.comboBoxEdit3 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -61,11 +63,9 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.col_MaQuyDinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col_TenQuyDinh = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_QuyDinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
@@ -96,7 +96,7 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.richEditControl1);
-            this.layoutControl1.Controls.Add(this.gridControl1);
+            this.layoutControl1.Controls.Add(this.grd_QuyDinh);
             this.layoutControl1.Controls.Add(this.comboBoxEdit3);
             this.layoutControl1.Controls.Add(this.simpleButton5);
             this.layoutControl1.Controls.Add(this.comboBoxEdit1);
@@ -123,14 +123,14 @@
             this.richEditControl1.Size = new System.Drawing.Size(430, 329);
             this.richEditControl1.TabIndex = 23;
             // 
-            // gridControl1
+            // grd_QuyDinh
             // 
-            this.gridControl1.Location = new System.Drawing.Point(24, 68);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(257, 377);
-            this.gridControl1.TabIndex = 21;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grd_QuyDinh.Location = new System.Drawing.Point(24, 68);
+            this.grd_QuyDinh.MainView = this.gridView1;
+            this.grd_QuyDinh.Name = "grd_QuyDinh";
+            this.grd_QuyDinh.Size = new System.Drawing.Size(257, 377);
+            this.grd_QuyDinh.TabIndex = 21;
+            this.grd_QuyDinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -138,8 +138,24 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.col_MaQuyDinh,
             this.col_TenQuyDinh});
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.grd_QuyDinh;
             this.gridView1.Name = "gridView1";
+            // 
+            // col_MaQuyDinh
+            // 
+            this.col_MaQuyDinh.Caption = "Mã Quy Định";
+            this.col_MaQuyDinh.FieldName = "id_quydinh";
+            this.col_MaQuyDinh.Name = "col_MaQuyDinh";
+            this.col_MaQuyDinh.Visible = true;
+            this.col_MaQuyDinh.VisibleIndex = 0;
+            // 
+            // col_TenQuyDinh
+            // 
+            this.col_TenQuyDinh.Caption = "Tên Quy Định";
+            this.col_TenQuyDinh.FieldName = "tenquydinh";
+            this.col_TenQuyDinh.Name = "col_TenQuyDinh";
+            this.col_TenQuyDinh.Visible = true;
+            this.col_TenQuyDinh.VisibleIndex = 1;
             // 
             // comboBoxEdit3
             // 
@@ -301,7 +317,7 @@
             // 
             // layoutControlItem15
             // 
-            this.layoutControlItem15.Control = this.gridControl1;
+            this.layoutControlItem15.Control = this.grd_QuyDinh;
             this.layoutControlItem15.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem15.Name = "layoutControlItem15";
             this.layoutControlItem15.Size = new System.Drawing.Size(261, 381);
@@ -415,22 +431,6 @@
             this.layoutControlItem4.Text = "Nội dung";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(65, 13);
             // 
-            // col_MaQuyDinh
-            // 
-            this.col_MaQuyDinh.Caption = "Mã Quy Định";
-            this.col_MaQuyDinh.FieldName = "id_quydinh";
-            this.col_MaQuyDinh.Name = "col_MaQuyDinh";
-            this.col_MaQuyDinh.Visible = true;
-            this.col_MaQuyDinh.VisibleIndex = 0;
-            // 
-            // col_TenQuyDinh
-            // 
-            this.col_TenQuyDinh.Caption = "Tên Quy Định";
-            this.col_TenQuyDinh.FieldName = "tenquydinh";
-            this.col_TenQuyDinh.Name = "col_TenQuyDinh";
-            this.col_TenQuyDinh.Visible = true;
-            this.col_TenQuyDinh.VisibleIndex = 1;
-            // 
             // Frm_QuyDinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,7 +442,7 @@
             this.Load += new System.EventHandler(this.Frm_QuyDinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_QuyDinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
@@ -501,7 +501,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl grd_QuyDinh;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraRichEdit.RichEditControl richEditControl1;

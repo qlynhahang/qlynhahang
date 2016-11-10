@@ -1,4 +1,5 @@
-﻿using RestaurantSoftware.DA_Layer;
+﻿using DevExpress.XtraGrid;
+using RestaurantSoftware.DA_Layer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,18 @@ namespace RestaurantSoftware.BL_Layer
     {
         RestaurantDBDataContext dbContext = new RestaurantDBDataContext();
 
-        public IEnumerable<QuyDinh> LayDanhSachQuyDinh()
+        public void LayDanhSachQuyDinh(GridControl grid)
         {
-            IEnumerable<QuyDinh> query = from m in dbContext.QuyDinhs select m;
-            return query;
+            var query = from db in dbContext.QuyDinhs
+                        select new
+                        {
+                            db.id_quydinh,
+                            db.tenquydinh,
+                            db.id_nhanvien,
+                            db.ngaylap,
+                            db.noidung
+                        };
+            grid.DataSource = query;
         }
     }
 }
