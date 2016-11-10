@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace RestaurantSoftware.BL_Layer
 {
-    class HoaDon_BLL
+    class Ban_BLL
     {
         RestaurantDBDataContext dbContext = new RestaurantDBDataContext();
 
-        public IEnumerable<HoaDonThanhToan> LayDanhHoaDon()
+        public IEnumerable<Ban> LayDanhBan()
         {
-            IEnumerable<HoaDonThanhToan> query = from m in dbContext.HoaDonThanhToans select m;
+            IEnumerable<Ban> query = from m in dbContext.Bans select m;
             return query;
         }
     }

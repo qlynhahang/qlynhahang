@@ -375,6 +375,7 @@
             // 
             this.gridView_ChiTietDatBan.GridControl = this.gridControl_ChiTietDatBan;
             this.gridView_ChiTietDatBan.Name = "gridView_ChiTietDatBan";
+            this.gridView_ChiTietDatBan.OptionsView.ShowGroupPanel = false;
             // 
             // txtSDT
             // 
