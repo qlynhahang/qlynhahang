@@ -107,6 +107,7 @@ namespace RestaurantSoftware.P_Layer
 
         private void dtNgayDat_EditValueChanged(object sender, EventArgs e)
         {
+            txtBan.Text = "";
             LoadDsBan();
         }
 
