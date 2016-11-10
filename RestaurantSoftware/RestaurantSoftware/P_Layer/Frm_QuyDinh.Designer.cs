@@ -61,6 +61,8 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.col_MaQuyDinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_TenQuyDinh = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -133,6 +135,9 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.col_MaQuyDinh,
+            this.col_TenQuyDinh});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -410,6 +415,22 @@
             this.layoutControlItem4.Text = "Nội dung";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(65, 13);
             // 
+            // col_MaQuyDinh
+            // 
+            this.col_MaQuyDinh.Caption = "Mã Quy Định";
+            this.col_MaQuyDinh.FieldName = "id_quydinh";
+            this.col_MaQuyDinh.Name = "col_MaQuyDinh";
+            this.col_MaQuyDinh.Visible = true;
+            this.col_MaQuyDinh.VisibleIndex = 0;
+            // 
+            // col_TenQuyDinh
+            // 
+            this.col_TenQuyDinh.Caption = "Tên Quy Định";
+            this.col_TenQuyDinh.FieldName = "tenquydinh";
+            this.col_TenQuyDinh.Name = "col_TenQuyDinh";
+            this.col_TenQuyDinh.Visible = true;
+            this.col_TenQuyDinh.VisibleIndex = 1;
+            // 
             // Frm_QuyDinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,6 +439,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "Frm_QuyDinh";
             this.Text = "QUẢN LÝ QUY ĐỊNH";
+            this.Load += new System.EventHandler(this.Frm_QuyDinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -484,6 +506,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraRichEdit.RichEditControl richEditControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraGrid.Columns.GridColumn col_MaQuyDinh;
+        private DevExpress.XtraGrid.Columns.GridColumn col_TenQuyDinh;
 
     }
 }
