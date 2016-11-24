@@ -11,12 +11,6 @@
       <Association Name="LoaiBan_Ban" Member="LoaiBan" ThisKey="id_loaiban" OtherKey="id_loaiban" Type="LoaiBan" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TrangThai" Member="TrangThais">
-    <Type Name="TrangThai">
-      <Column Name="[id-trangthai]" Member="id_trangthai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="tentrangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.BaoCaoDoanhThu" Member="BaoCaoDoanhThus">
     <Type Name="BaoCaoDoanhThu">
       <Column Name="id_bcdoanhthu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -239,6 +233,13 @@
       <Column Name="id_thamso" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="vat" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="khuyenmai" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TrangThai" Member="TrangThais">
+    <Type Name="TrangThai">
+      <Column Name="[id-trangthai]" Member="id_trangthai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tentrangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lienket" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

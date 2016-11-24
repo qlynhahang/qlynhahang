@@ -199,6 +199,15 @@
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsCustomization.AllowFilter = false;
+            this.gridView1.OptionsCustomization.AllowSort = false;
+            this.gridView1.OptionsNavigation.AutoMoveRowFocus = false;
+            this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
+            this.gridView1.OptionsSelection.MultiSelect = true;
+            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // Frm_NguoiDung
             // 
