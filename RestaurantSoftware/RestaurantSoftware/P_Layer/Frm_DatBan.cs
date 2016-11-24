@@ -91,7 +91,10 @@ namespace RestaurantSoftware.P_Layer
             cbxKhachHang.Properties.DisplayMember = "tenkh";
             cbxKhachHang.Properties.ValueMember = "id_khachhang";
         }
+        public void LoadChiTietDatBan()
+        {
 
+        }
         private void Frm_DatBan_Load(object sender, EventArgs e)
         {
             LoadDsBan();

@@ -75,5 +75,9 @@ namespace RestaurantSoftware.BL_Layer
             dbContext.DatBans.InsertOnSubmit(db);
             dbContext.SubmitChanges();
         }
+        public void LoadChiTietDatBan(string TenBan, DateTime ngaydat)
+        {
+
+        }
     }
 }
