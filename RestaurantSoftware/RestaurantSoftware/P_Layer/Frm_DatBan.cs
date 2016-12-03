@@ -129,7 +129,7 @@ namespace RestaurantSoftware.P_Layer
             DevExpress.XtraEditors.LookUpEdit editor = (sender as DevExpress.XtraEditors.LookUpEdit);
             DataRowView row = editor.Properties.GetDataSourceRowByKeyValue(editor.EditValue) as DataRowView;
             txtSDT.Text = row["sdt"].ToString();
-            txtDiaChi.Text = row["diachi"].ToString();
+            //txtDiaChi.Text = row["diachi"].ToString();
         }
 
         private void btnThemMoi_Click(object sender, EventArgs e)

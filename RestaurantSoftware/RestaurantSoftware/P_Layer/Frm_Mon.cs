@@ -58,7 +58,7 @@ namespace RestaurantSoftware.P_Layer
                 Mon Mon = new Mon();
                 Mon.id_mon = int.Parse(gridView1.GetRowCellValue(id, "id_mon").ToString());
                 Mon.id_loaimon = int.Parse(gridView1.GetRowCellValue(id, "id_loaimon").ToString());
-                Mon.tenmon = gridView1.GetRowCellValue(id, "tenmon").ToString();
+                Mon.tenmon = gridView1.GetRowCellValue(id, "tenmon  ").ToString();
                 Mon.tenviettat = gridView1.GetRowCellValue(id, "tenviettat").ToString();
                 Mon.gia =decimal.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
                 Mon.trangthai = gridView1.GetRowCellValue(id, "trangthai").ToString();
@@ -128,6 +128,11 @@ namespace RestaurantSoftware.P_Layer
                 if (saveFileDialog1.FilterIndex == 3)
                     gridControl1.ExportToRtf(saveFileDialog1.FileName);
             }
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

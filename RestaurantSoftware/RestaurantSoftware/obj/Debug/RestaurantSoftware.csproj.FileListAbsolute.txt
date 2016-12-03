@@ -1,5 +1,3 @@
-D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.exe.config
-D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csprojResolveAssemblyReference.cache
 D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.FormMain.resources
 D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.Properties.Resources.resources
 D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_Ban.resources
@@ -23,7 +21,9 @@ D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSof
 D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_ThanhToan.resources
 D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csproj.GenerateResource.Cache
 D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe.licenses
+D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.exe.config
 D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.exe
 D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.pdb
+D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csprojResolveAssemblyReference.cache
 D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe
 D:\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.pdb
