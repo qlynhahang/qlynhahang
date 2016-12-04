@@ -217,6 +217,7 @@
             this.col_TenVietTat,
             this.col_TrangThai,
             this.col_Gia});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm dòng mới tại đây...";
@@ -243,7 +244,7 @@
             this.col_TenMon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_TenMon.AppearanceHeader.Options.UseTextOptions = true;
             this.col_TenMon.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_TenMon.Caption = "Tên Món";
+            this.col_TenMon.Caption = "Tên Món (*)";
             this.col_TenMon.FieldName = "tenmon";
             this.col_TenMon.Name = "col_TenMon";
             this.col_TenMon.Visible = true;
@@ -264,15 +265,11 @@
             // 
             // lue_LoaiMon
             // 
-            this.lue_LoaiMon.Appearance.Options.UseTextOptions = true;
-            this.lue_LoaiMon.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lue_LoaiMon.AppearanceDropDown.Options.UseTextOptions = true;
-            this.lue_LoaiMon.AppearanceDropDown.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lue_LoaiMon.AutoHeight = false;
             this.lue_LoaiMon.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lue_LoaiMon.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tenloaimon", "", 62, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tenloaimon", "", 62, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
             this.lue_LoaiMon.DisplayMember = "tenloaimon";
             this.lue_LoaiMon.Name = "lue_LoaiMon";
             this.lue_LoaiMon.NullText = "[Xin chọn loại món...]";
@@ -298,7 +295,7 @@
             this.col_TrangThai.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_TrangThai.AppearanceHeader.Options.UseTextOptions = true;
             this.col_TrangThai.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_TrangThai.Caption = "Trạng Thái";
+            this.col_TrangThai.Caption = "Trạng Thái (*)";
             this.col_TrangThai.ColumnEdit = this.lue_TrangThai;
             this.col_TrangThai.FieldName = "trangthai";
             this.col_TrangThai.Name = "col_TrangThai";
@@ -324,7 +321,7 @@
             this.col_Gia.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_Gia.AppearanceHeader.Options.UseTextOptions = true;
             this.col_Gia.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_Gia.Caption = "Giá";
+            this.col_Gia.Caption = "Giá (*)";
             this.col_Gia.ColumnEdit = this.repositoryItemTextEdit2;
             this.col_Gia.FieldName = "gia";
             this.col_Gia.Name = "col_Gia";

@@ -33,7 +33,28 @@ namespace RestaurantSoftware.BL_Layer
         public void XoaKhachHang(int _KhachHagID)
         {
             KhachHang _khachhang = dbContext.KhachHangs.Single<KhachHang>(x => x.id_khachhang == _KhachHagID);
+            dbContext.KhachHangs.DeleteOnSubmit(_khachhang);
             dbContext.SubmitChanges();
+        }
+
+        public bool KiemTraSDTTonTai(string sdt, int id = -1)
+        {
+            IEnumerable<KhachHang> query = from kh in dbContext.KhachHangs
+                                     where kh.sdt == sdt
+                                     select kh;
+            if (0 < query.Count() && query.Count() <= 2)
+            {
+                if (id != -1)
+                {
+                    query = query.Where(kh=> kh.id_khachhang == id);
+                    if (query.Count() == 1)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
         }
     }
 }

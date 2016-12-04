@@ -154,13 +154,6 @@
       <Association Name="LoaiHangHoa_HangHoa" Member="HangHoas" ThisKey="id_loaihang" OtherKey="id_loaihang" Type="HangHoa" />
     </Type>
   </Table>
-  <Table Name="dbo.LoaiMon" Member="LoaiMons">
-    <Type Name="LoaiMon">
-      <Column Name="id_loaimon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="tenloaimon" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Association Name="LoaiMon_Mon" Member="Mons" ThisKey="id_loaimon" OtherKey="id_loaimon" Type="Mon" />
-    </Type>
-  </Table>
   <Table Name="dbo.Mon" Member="Mons">
     <Type Name="Mon">
       <Column Name="id_mon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -240,6 +233,13 @@
       <Column Name="[id-trangthai]" Member="id_trangthai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="tentrangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="lienket" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiMon" Member="LoaiMons">
+    <Type Name="LoaiMon">
+      <Column Name="id_loaimon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tenloaimon" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="LoaiMon_Mon" Member="Mons" ThisKey="id_loaimon" OtherKey="id_loaimon" Type="Mon" />
     </Type>
   </Table>
 </Database>

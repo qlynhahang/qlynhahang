@@ -34,7 +34,28 @@ namespace RestaurantSoftware.BL_Layer
         public void XoaNhanVien(int _NhanVienID)
         {
             NhanVien _NhanVien = dbContext.NhanViens.Single<NhanVien>(x => x.id_nhanvien == _NhanVienID);
+            dbContext.NhanViens.DeleteOnSubmit(_NhanVien);
             dbContext.SubmitChanges();
+        }
+
+        public bool KiemTraTDNTonTai(string _tendangnhap, int id = -1)
+        {
+            IEnumerable<NhanVien> query = from nv in dbContext.NhanViens
+                                     where nv.tendangnhap == _tendangnhap
+                                     select nv;
+            if (0 < query.Count() && query.Count() <= 2)
+            {
+                if (id != -1)
+                {
+                    query = query.Where(nv => nv.id_nhanvien == id);
+                    if (query.Count() == 1)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -140,3 +140,7 @@ C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debu
 C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_ThanhToan.resources
 C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csproj.GenerateResource.Cache
 C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe.licenses
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Reports.ThongKeMonTheoNgay.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_ThongKeMon.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.PrintRibbonControllerResources.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Reports.DoanhThuTheoThang.resources

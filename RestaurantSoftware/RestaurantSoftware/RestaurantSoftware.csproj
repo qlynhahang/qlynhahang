@@ -34,24 +34,38 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v15.2" />
+    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.2" />
+    <Reference Include="DevExpress.DataAccess.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v15.2.Drawing, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.2.Core" />
     <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v15.2" />
+    <Reference Include="DevExpress.Utils.v15.2.UI, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v15.2" />
     <Reference Include="DevExpress.Sparkline.v15.2.Core" />
+    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.2" />
+    <Reference Include="DevExpress.XtraGauges.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Reporting, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL_Layer\Ban_BLL.cs" />
     <Compile Include="BL_Layer\DatBan_BLL.cs" />
     <Compile Include="BL_Layer\HangHoa_BLL.cs" />
     <Compile Include="BL_Layer\HoaDon_BLL.cs" />
@@ -88,6 +103,11 @@
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintRibbonControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -205,8 +225,39 @@
     <Compile Include="P_Layer\Frm_ThanhToan.Designer.cs">
       <DependentUpon>Frm_ThanhToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="P_Layer\Frm_ThongKeMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Frm_ThongKeMon.Designer.cs">
+      <DependentUpon>Frm_ThongKeMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Layer\Reports\DoanhThuTheoThang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Reports\DoanhThuTheoThang.Designer.cs">
+      <DependentUpon>DoanhThuTheoThang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Layer\Reports\ThongKeMonTheoNgay.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Reports\ThongKeMonTheoNgay.Designer.cs">
+      <DependentUpon>ThongKeMonTheoNgay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\Notifications.cs" />
     <Compile Include="Utils\Utils.cs" />
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Frm_ThongKeMon.resx">
+      <DependentUpon>Frm_ThongKeMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Reports\DoanhThuTheoThang.resx">
+      <DependentUpon>DoanhThuTheoThang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Reports\ThongKeMonTheoNgay.resx">
+      <DependentUpon>ThongKeMonTheoNgay.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="DA_Layer\RestaurantDB.dbml.layout">
       <DependentUpon>RestaurantDB.dbml</DependentUpon>
@@ -302,6 +353,7 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

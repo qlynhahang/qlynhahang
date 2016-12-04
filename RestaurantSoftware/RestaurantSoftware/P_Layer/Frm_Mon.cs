@@ -55,9 +55,10 @@ namespace RestaurantSoftware.P_Layer
             gridView1.SelectRow(gridView1.FocusedRowHandle);
             gridView1.FocusedColumn = gridView1.VisibleColumns[0];
             gridView1.ShowEditor();
-            if(KiemTraHang())
+            gridView1.PostEditor();
+            if (KiemTraHang())
             {
-                if(!_monBll.KiemTraTenMonTonTai(gridView1.GetFocusedRowCellValue(col_TenMon).ToString()) )
+                if (!_monBll.KiemTraTenMonTonTai(gridView1.GetFocusedRowCellValue(col_TenMon).ToString()))
                 {
                     try
                     {
@@ -71,9 +72,9 @@ namespace RestaurantSoftware.P_Layer
                         Notifications.Success("Thêm món mới thành công!");
                         LoadDataSource();
                     }
-                    catch(Exception err)
+                    catch (Exception)
                     {
-                        Notifications.Error("Bạn chưa nhập đầy đủ thông tin món. Vui lòng nhập lại!" );
+                        Notifications.Error("Bạn chưa nhập đầy đủ thông tin món. Vui lòng nhập lại!");
                     }
                 }
                 else
@@ -95,36 +96,53 @@ namespace RestaurantSoftware.P_Layer
             return false;
         }
 
+        private void btn_Xoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (Notifications.Answers("Bạn thật sự muốn xóa dữ liệu?") == DialogResult.Cancel)
+            {
+                return;
+            }
+            for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+            {
+                int _ID_Mon = int.Parse(gridView1.GetRowCellValue(gridView1.GetSelectedRows()[i], "id_mon").ToString());
+                _monBll.XoaMon(_ID_Mon);
+            }
+            Notifications.Success("Xóa dữ liệu thành công!");
+            LoadDataSource();
+        }
+
         private void btn_Luu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string error = "";
             bool isUpdate = false;
-            foreach (int id in _listUpdate)
-            {
-                Mon mon = new Mon();
-                mon.id_mon = int.Parse(gridView1.GetRowCellValue(id,"id_mon").ToString());
-                mon.tenmon = gridView1.GetRowCellValue(id, "tenmon").ToString();
-                mon.id_loaimon = int.Parse(gridView1.GetRowCellValue(id, "id_loaimon").ToString());
-                mon.tenviettat = gridView1.GetRowCellValue(id, "tenviettat").ToString();
-                mon.gia = decimal.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
-                mon.trangthai = gridView1.GetRowCellValue(id, "trangthai").ToString();
-                if(!_monBll.KiemTraTenMonTonTai(mon.tenmon, mon.id_mon))
+            if(_listUpdate.Count > 1)
+                foreach (int id in _listUpdate)
                 {
-                    _monBll.CapNhatMon(mon);
-                    isUpdate = true;
-                }
-                else
-                {
-                    if(error == "")
+                    Mon mon = new Mon();
+                    mon.id_mon = int.Parse(gridView1.GetRowCellValue(id, "id_mon").ToString());
+                    mon.tenmon = gridView1.GetRowCellValue(id, "tenmon").ToString();
+                    mon.id_loaimon = int.Parse(gridView1.GetRowCellValue(id, "id_loaimon").ToString());
+                    mon.tenviettat = gridView1.GetRowCellValue(id, "tenviettat").ToString();
+                    mon.gia = decimal.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
+                    mon.trangthai = gridView1.GetRowCellValue(id, "trangthai").ToString();
+                    
+                    if (!_monBll.KiemTraTenMonTonTai(mon.tenmon, mon.id_mon))
                     {
-                        error = mon.tenmon;
+                        _monBll.CapNhatMon(mon);
+                        isUpdate = true;
                     }
                     else
                     {
-                        error += " | " + mon.tenmon;
+                        if (error == "")
+                        {
+                            error = mon.tenmon;
+                        }
+                        else
+                        {
+                            error += " | " + mon.tenmon;
+                        }
                     }
                 }
-            }
             if (isUpdate == true)
             {
                 if (error.Length == 0)
@@ -157,23 +175,15 @@ namespace RestaurantSoftware.P_Layer
 
         private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
-            btn_Luu.Enabled = true;
-            _listUpdate.Add(e.RowHandle);
-        }
-
-        private void btn_Xoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if(Notifications.Answers("Bạn thật sự muốn xóa dữ liệu?") == DialogResult.Cancel)
+            if (this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
             {
-                return;
+                btn_Luu.Enabled = true;
+                _listUpdate.Add(e.RowHandle);
             }
-            for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+            else
             {
-                int _ID_Mon = int.Parse(gridView1.GetRowCellValue(gridView1.GetSelectedRows()[i], "id_mon").ToString());
-                _monBll.XoaMon(_ID_Mon);
+                btn_Luu.Enabled = false;
             }
-            Notifications.Success("Xóa dữ liệu thành công!");
-            LoadDataSource();
         }
 
         private void btn_LamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -185,20 +195,13 @@ namespace RestaurantSoftware.P_Layer
             gridView1.ShowEditor();
         }
 
-        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
-        {
-            btn_Xoa.Enabled = false;
-            if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
-            {
-                btn_Xoa.Enabled = true;
-            }
-        }
+       
 
         private void btn_In_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "File PDF|*.pdf|Excel|*.xls|Text rtf|*.rtf";
-            saveFileDialog1.Title = "Xuất danh sách loại phòng";
+            saveFileDialog1.Title = "Xuất danh sách món";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 if (saveFileDialog1.FilterIndex == 1)
@@ -207,6 +210,14 @@ namespace RestaurantSoftware.P_Layer
                     gridControl1.ExportToXls(saveFileDialog1.FileName);
                 if (saveFileDialog1.FilterIndex == 3)
                     gridControl1.ExportToRtf(saveFileDialog1.FileName);
+            }
+        }
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            btn_Xoa.Enabled = false;
+            if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
+            {
+                btn_Xoa.Enabled = true;
             }
         }
 
