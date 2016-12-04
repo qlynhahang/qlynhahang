@@ -11,7 +11,7 @@ namespace RestaurantSoftware.BL_Layer
 
         public IEnumerable<Ban> LayDanhSachBan()
         {
-            IEnumerable<Ban> query = from B in dbContext.Bans select B;
+            IEnumerable<Ban> query = from B in dbContext.Bans where B.trangthai != "Hỏng" select B;
             return query;
         }
 

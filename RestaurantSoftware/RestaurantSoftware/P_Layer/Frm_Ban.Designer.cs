@@ -204,6 +204,7 @@
             this.gridView1.NewItemRowText = "Thêm dòng mới tại đây...";
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView1_ShowingEditor);
             // 
             // col_TenBan
             // 
@@ -269,7 +270,7 @@
             this.lue_TrangThai.Name = "lue_TrangThai";
             this.lue_TrangThai.NullText = "[Xin chọn trạng thái]";
             this.lue_TrangThai.ShowHeader = false;
-            this.lue_TrangThai.ValueMember = "id_trangthai";
+            this.lue_TrangThai.ValueMember = "tentrangthai";
             // 
             // Frm_Ban
             // 
@@ -283,6 +284,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Ban";
             this.Text = "QUẢN LÝ BÀN";
+            this.Load += new System.EventHandler(this.Frm_Ban_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
