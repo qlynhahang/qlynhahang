@@ -28,6 +28,14 @@ namespace RestaurantSoftware.BL_Layer
             return query;
         }
 
+        public void LoadTrangThai(List<string> list)
+        {
+            var query = dbContext.TrangThais.Where(TrangThai => TrangThai.lienket == "datban");
+            foreach(var q in query)
+            {
+                list.Add(q.tentrangthai);
+            }
+        }
 
         public void LayDanhSachMon(GridControl grid)
         {

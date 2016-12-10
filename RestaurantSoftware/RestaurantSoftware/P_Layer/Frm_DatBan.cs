@@ -17,7 +17,7 @@ namespace RestaurantSoftware.P_Layer
     public partial class Frm_DatBan : DevExpress.XtraEditors.XtraForm
     {
         DatBan_BLL datban_bll = new DatBan_BLL();
-        bool checkClickRow = false;
+        List<string> trangthaiDatBan = new List<string>();
 
         public Frm_DatBan()
         {
@@ -31,19 +31,20 @@ namespace RestaurantSoftware.P_Layer
             DataTable ban = Utils.Utils.ConvertToDataTable<Ban>(datban_bll.LayDanhSachBan(dtNgayDat.DateTime));
 
             lvDsBan.LargeImageList = imageList1;
-
+            
             foreach (DataRow dr in ban.Rows)
             {
                 bool exsistGroup = false;
                 ListViewItem lvItem = new ListViewItem();
                 ListViewGroup lvGroup = new ListViewGroup();
                 lvItem.Text = dr["tenban"].ToString();
+                lvItem.ImageIndex = 2;
                 switch (dr["trangthai"].ToString())
                 {
                     case "trống":
                         lvItem.ImageIndex = 2;
                         break;
-                    case "đặt trước":
+                    case "đặt":
                         lvItem.ImageIndex = 1;
                         break;
                     case "đầy":
@@ -182,6 +183,8 @@ namespace RestaurantSoftware.P_Layer
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
             DatBan db = new DatBan();
+            datban_bll.LoadTrangThai(trangthaiDatBan);
+
             if (lvDsBan.SelectedItems.Count > 0)
             {
                 db.id_ban = Convert.ToInt16(lvDsBan.SelectedItems[0].Name);
@@ -195,7 +198,7 @@ namespace RestaurantSoftware.P_Layer
             db.id_khachhang = (int)cbxKhachHang.EditValue;
             db.id_nhanvien = 1;
             db.thoigian = dtNgayDat.DateTime.Date;
-            db.trangthai = "";
+            db.trangthai = trangthaiDatBan[0]; //0.chờ  1.nhận  2.hủy
             datban_bll.ThemMoiPhieuDatBan(db);
             MessageBox.Show("Thêm phiếu đặt thành công");
             LoadDsBan();
@@ -209,7 +212,7 @@ namespace RestaurantSoftware.P_Layer
             cbxKhachHang.Properties.ValueMember = "tenkh";
             cbxKhachHang.EditValue = gridView_DsDatBan.GetRowCellValue(e.RowHandle, "tenkh").ToString();
             cbxKhachHang.Properties.ValueMember = "id_khachhang";
-            checkClickRow = true;
+            
         }
 
         private void txtBan_EditValueChanged(object sender, EventArgs e)
