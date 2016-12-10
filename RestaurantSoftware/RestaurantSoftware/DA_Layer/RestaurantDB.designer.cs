@@ -33,9 +33,6 @@ namespace RestaurantSoftware.DA_Layer
     partial void InsertBan(Ban instance);
     partial void UpdateBan(Ban instance);
     partial void DeleteBan(Ban instance);
-    partial void InsertTrangThai(TrangThai instance);
-    partial void UpdateTrangThai(TrangThai instance);
-    partial void DeleteTrangThai(TrangThai instance);
     partial void InsertBaoCaoDoanhThu(BaoCaoDoanhThu instance);
     partial void UpdateBaoCaoDoanhThu(BaoCaoDoanhThu instance);
     partial void DeleteBaoCaoDoanhThu(BaoCaoDoanhThu instance);
@@ -75,9 +72,6 @@ namespace RestaurantSoftware.DA_Layer
     partial void InsertLoaiHangHoa(LoaiHangHoa instance);
     partial void UpdateLoaiHangHoa(LoaiHangHoa instance);
     partial void DeleteLoaiHangHoa(LoaiHangHoa instance);
-    partial void InsertLoaiMon(LoaiMon instance);
-    partial void UpdateLoaiMon(LoaiMon instance);
-    partial void DeleteLoaiMon(LoaiMon instance);
     partial void InsertLoaiTrangThai(LoaiTrangThai instance);
     partial void UpdateLoaiTrangThai(LoaiTrangThai instance);
     partial void DeleteLoaiTrangThai(LoaiTrangThai instance);
@@ -99,6 +93,12 @@ namespace RestaurantSoftware.DA_Layer
     partial void InsertSuCo(SuCo instance);
     partial void UpdateSuCo(SuCo instance);
     partial void DeleteSuCo(SuCo instance);
+    partial void InsertTrangThai(TrangThai instance);
+    partial void UpdateTrangThai(TrangThai instance);
+    partial void DeleteTrangThai(TrangThai instance);
+    partial void InsertLoaiMon(LoaiMon instance);
+    partial void UpdateLoaiMon(LoaiMon instance);
+    partial void DeleteLoaiMon(LoaiMon instance);
     #endregion
 		
 		public RestaurantDBDataContext() : 
@@ -136,14 +136,6 @@ namespace RestaurantSoftware.DA_Layer
 			get
 			{
 				return this.GetTable<Ban>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TrangThai> TrangThais
-		{
-			get
-			{
-				return this.GetTable<TrangThai>();
 			}
 		}
 		
@@ -251,14 +243,6 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		public System.Data.Linq.Table<LoaiMon> LoaiMons
-		{
-			get
-			{
-				return this.GetTable<LoaiMon>();
-			}
-		}
-		
 		public System.Data.Linq.Table<LoaiTrangThai> LoaiTrangThais
 		{
 			get
@@ -320,6 +304,22 @@ namespace RestaurantSoftware.DA_Layer
 			get
 			{
 				return this.GetTable<ThamSo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TrangThai> TrangThais
+		{
+			get
+			{
+				return this.GetTable<TrangThai>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LoaiMon> LoaiMons
+		{
+			get
+			{
+				return this.GetTable<LoaiMon>();
 			}
 		}
 	}
@@ -552,116 +552,6 @@ namespace RestaurantSoftware.DA_Layer
 		{
 			this.SendPropertyChanging();
 			entity.Ban = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TrangThai")]
-	public partial class TrangThai : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_trangthai;
-		
-		private string _tentrangthai;
-		
-		private string _lienket;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_trangthaiChanging(int value);
-    partial void Onid_trangthaiChanged();
-    partial void OntentrangthaiChanging(string value);
-    partial void OntentrangthaiChanged();
-    partial void OnlienketChanging(string value);
-    partial void OnlienketChanged();
-    #endregion
-		
-		public TrangThai()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[id-trangthai]", Storage="_id_trangthai", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_trangthai
-		{
-			get
-			{
-				return this._id_trangthai;
-			}
-			set
-			{
-				if ((this._id_trangthai != value))
-				{
-					this.Onid_trangthaiChanging(value);
-					this.SendPropertyChanging();
-					this._id_trangthai = value;
-					this.SendPropertyChanged("id_trangthai");
-					this.Onid_trangthaiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tentrangthai", DbType="NVarChar(50)")]
-		public string tentrangthai
-		{
-			get
-			{
-				return this._tentrangthai;
-			}
-			set
-			{
-				if ((this._tentrangthai != value))
-				{
-					this.OntentrangthaiChanging(value);
-					this.SendPropertyChanging();
-					this._tentrangthai = value;
-					this.SendPropertyChanged("tentrangthai");
-					this.OntentrangthaiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lienket", DbType="NVarChar(50)")]
-		public string lienket
-		{
-			get
-			{
-				return this._lienket;
-			}
-			set
-			{
-				if ((this._lienket != value))
-				{
-					this.OnlienketChanging(value);
-					this.SendPropertyChanging();
-					this._lienket = value;
-					this.SendPropertyChanged("lienket");
-					this.OnlienketChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -3696,120 +3586,6 @@ namespace RestaurantSoftware.DA_Layer
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiMon")]
-	public partial class LoaiMon : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_loaimon;
-		
-		private string _tenloaimon;
-		
-		private EntitySet<Mon> _Mons;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_loaimonChanging(int value);
-    partial void Onid_loaimonChanged();
-    partial void OntenloaimonChanging(string value);
-    partial void OntenloaimonChanged();
-    #endregion
-		
-		public LoaiMon()
-		{
-			this._Mons = new EntitySet<Mon>(new Action<Mon>(this.attach_Mons), new Action<Mon>(this.detach_Mons));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_loaimon", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_loaimon
-		{
-			get
-			{
-				return this._id_loaimon;
-			}
-			set
-			{
-				if ((this._id_loaimon != value))
-				{
-					this.Onid_loaimonChanging(value);
-					this.SendPropertyChanging();
-					this._id_loaimon = value;
-					this.SendPropertyChanged("id_loaimon");
-					this.Onid_loaimonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenloaimon", DbType="NVarChar(20)")]
-		public string tenloaimon
-		{
-			get
-			{
-				return this._tenloaimon;
-			}
-			set
-			{
-				if ((this._tenloaimon != value))
-				{
-					this.OntenloaimonChanging(value);
-					this.SendPropertyChanging();
-					this._tenloaimon = value;
-					this.SendPropertyChanged("tenloaimon");
-					this.OntenloaimonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiMon_Mon", Storage="_Mons", ThisKey="id_loaimon", OtherKey="id_loaimon")]
-		public EntitySet<Mon> Mons
-		{
-			get
-			{
-				return this._Mons;
-			}
-			set
-			{
-				this._Mons.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Mons(Mon entity)
-		{
-			this.SendPropertyChanging();
-			entity.LoaiMon = this;
-		}
-		
-		private void detach_Mons(Mon entity)
-		{
-			this.SendPropertyChanging();
-			entity.LoaiMon = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiTrangThai")]
 	public partial class LoaiTrangThai : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -5389,6 +5165,230 @@ namespace RestaurantSoftware.DA_Layer
 					this._khuyenmai = value;
 				}
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TrangThai")]
+	public partial class TrangThai : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_trangthai;
+		
+		private string _tentrangthai;
+		
+		private string _lienket;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_trangthaiChanging(int value);
+    partial void Onid_trangthaiChanged();
+    partial void OntentrangthaiChanging(string value);
+    partial void OntentrangthaiChanged();
+    partial void OnlienketChanging(string value);
+    partial void OnlienketChanged();
+    #endregion
+		
+		public TrangThai()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[id-trangthai]", Storage="_id_trangthai", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_trangthai
+		{
+			get
+			{
+				return this._id_trangthai;
+			}
+			set
+			{
+				if ((this._id_trangthai != value))
+				{
+					this.Onid_trangthaiChanging(value);
+					this.SendPropertyChanging();
+					this._id_trangthai = value;
+					this.SendPropertyChanged("id_trangthai");
+					this.Onid_trangthaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tentrangthai", DbType="NVarChar(50)")]
+		public string tentrangthai
+		{
+			get
+			{
+				return this._tentrangthai;
+			}
+			set
+			{
+				if ((this._tentrangthai != value))
+				{
+					this.OntentrangthaiChanging(value);
+					this.SendPropertyChanging();
+					this._tentrangthai = value;
+					this.SendPropertyChanged("tentrangthai");
+					this.OntentrangthaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lienket", DbType="NVarChar(30)")]
+		public string lienket
+		{
+			get
+			{
+				return this._lienket;
+			}
+			set
+			{
+				if ((this._lienket != value))
+				{
+					this.OnlienketChanging(value);
+					this.SendPropertyChanging();
+					this._lienket = value;
+					this.SendPropertyChanged("lienket");
+					this.OnlienketChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiMon")]
+	public partial class LoaiMon : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_loaimon;
+		
+		private string _tenloaimon;
+		
+		private EntitySet<Mon> _Mons;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_loaimonChanging(int value);
+    partial void Onid_loaimonChanged();
+    partial void OntenloaimonChanging(string value);
+    partial void OntenloaimonChanged();
+    #endregion
+		
+		public LoaiMon()
+		{
+			this._Mons = new EntitySet<Mon>(new Action<Mon>(this.attach_Mons), new Action<Mon>(this.detach_Mons));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_loaimon", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_loaimon
+		{
+			get
+			{
+				return this._id_loaimon;
+			}
+			set
+			{
+				if ((this._id_loaimon != value))
+				{
+					this.Onid_loaimonChanging(value);
+					this.SendPropertyChanging();
+					this._id_loaimon = value;
+					this.SendPropertyChanged("id_loaimon");
+					this.Onid_loaimonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenloaimon", DbType="NVarChar(20)")]
+		public string tenloaimon
+		{
+			get
+			{
+				return this._tenloaimon;
+			}
+			set
+			{
+				if ((this._tenloaimon != value))
+				{
+					this.OntenloaimonChanging(value);
+					this.SendPropertyChanging();
+					this._tenloaimon = value;
+					this.SendPropertyChanged("tenloaimon");
+					this.OntenloaimonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiMon_Mon", Storage="_Mons", ThisKey="id_loaimon", OtherKey="id_loaimon")]
+		public EntitySet<Mon> Mons
+		{
+			get
+			{
+				return this._Mons;
+			}
+			set
+			{
+				this._Mons.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Mons(Mon entity)
+		{
+			this.SendPropertyChanging();
+			entity.LoaiMon = this;
+		}
+		
+		private void detach_Mons(Mon entity)
+		{
+			this.SendPropertyChanging();
+			entity.LoaiMon = null;
 		}
 	}
 }
