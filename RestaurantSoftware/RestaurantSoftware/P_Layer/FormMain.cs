@@ -58,7 +58,10 @@ namespace RestaurantSoftware
             KhachHang.MdiParent= this;
             KhachHang.Show();
         }
-
+        public void Button_KhachHang(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            btn_KhachHang_ItemClick(sender,e);
+        }
         private void btn_NguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             P_Layer.Frm_NguoiDung NhanVien = new P_Layer.Frm_NguoiDung();

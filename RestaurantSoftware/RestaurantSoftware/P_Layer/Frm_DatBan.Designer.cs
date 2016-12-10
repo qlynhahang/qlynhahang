@@ -432,6 +432,9 @@
             this.cbxKhachHang.Name = "cbxKhachHang";
             this.cbxKhachHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxKhachHang.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tenkh", "Tên Khách Hàng"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("sdt", "sdt", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default)});
             this.cbxKhachHang.Properties.NullText = "";
             this.cbxKhachHang.Properties.PopupSizeable = false;
             this.cbxKhachHang.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;

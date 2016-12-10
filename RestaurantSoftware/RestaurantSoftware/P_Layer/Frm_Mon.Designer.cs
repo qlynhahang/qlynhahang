@@ -213,6 +213,7 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.gridControl1.ProcessGridKey += new System.Windows.Forms.KeyEventHandler(this.gridControl1_ProcessGridKey);
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -258,7 +259,7 @@
             this.col_LoaiMon.FieldName = "id_loaimon";
             this.col_LoaiMon.Name = "col_LoaiMon";
             this.col_LoaiMon.Visible = true;
-            this.col_LoaiMon.VisibleIndex = 0;
+            this.col_LoaiMon.VisibleIndex = 1;
             // 
             // lue_LoaiMon
             // 
