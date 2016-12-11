@@ -180,5 +180,12 @@ namespace RestaurantSoftware.BL_Layer
             }
             dbContext.SubmitChanges();
         }
+        public IQueryable<DatBan> LoadPhieuDatBan(int? idban,DateTime? dt)
+        {
+            var query = from datban in dbContext.DatBans
+                        where datban.thoigian == dt && datban.id_ban == idban
+                        select datban;
+            return query;
+        }
     }
 }

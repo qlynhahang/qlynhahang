@@ -18,7 +18,7 @@ namespace RestaurantSoftware.P_Layer
     {
         DatBan_BLL datban_bll = new DatBan_BLL();
         List<string> trangthaiDatBan = new List<string>();
-
+        int iddatbanSelected = 0;
         public Frm_DatBan()
         {
             InitializeComponent();
@@ -200,6 +200,11 @@ namespace RestaurantSoftware.P_Layer
             db.thoigian = dtNgayDat.DateTime.Date;
             db.trangthai = trangthaiDatBan[0]; //0.chờ  1.nhận  2.hủy
             datban_bll.ThemMoiPhieuDatBan(db);
+            IQueryable<DatBan> query = datban_bll.LoadPhieuDatBan(db.id_ban, db.thoigian);
+            foreach(var i in query)
+            {
+                
+            }
             MessageBox.Show("Thêm phiếu đặt thành công");
             LoadDsBan();
             LoadDsDatBan();

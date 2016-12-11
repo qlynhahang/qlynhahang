@@ -257,6 +257,8 @@ namespace RestaurantSoftware.P_Layer
                     phucvubll.LoadChiTietHoaDon(idhoadonSelected, gridControl_ChitietHoaDon);
                     phucvubll.SetTrangThaiPhieuDatBan(idbanSelected, today, ttdatban[1]); //đã nhận đơn đặt.
                 }
+                CapNhatTrangThaiBan();
+                LoadDsBan();
             }
             else
             {
